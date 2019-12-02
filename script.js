@@ -15,7 +15,6 @@ function playGame(){
           evt.target.style.pointerEvents = 'none'
           document.querySelector('h2').innerHTML = 'Player 2'
           document.querySelector('p').innerHTML = 'Red'
-
         }
       })
     }
