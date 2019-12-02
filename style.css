@@ -1,3 +1,22 @@
 body {
   background-color: deepskyblue;
+  width: 100%;
+  text-align: center;
+}
+section {
+  margin: 0 auto;
+}
+
+.container {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  width: 600px;
+  text-align: center;
+
+}
+.square {
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
 }
