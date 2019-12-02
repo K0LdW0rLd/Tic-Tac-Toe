@@ -7,15 +7,20 @@ function playGame(){
       evt.preventDefault();
       if (document.querySelector('h2').innerHTML === 'Player 2') {
         evt.target.style.backgroundColor = 'red';
+        evt.target.style.pointerEvents = 'none'
         document.querySelector('h2').innerHTML = 'Player 1'
+        document.querySelector('p').innerHTML = 'Blue'
         } else if (document.querySelector('h2').innerHTML === 'Player 1') {
           evt.target.style.backgroundColor = 'blue';
+          evt.target.style.pointerEvents = 'none'
           document.querySelector('h2').innerHTML = 'Player 2'
+          document.querySelector('p').innerHTML = 'Red'
+
         }
       })
     }
   }
-playGame()
+playGame();
 
 /* Original if else statement
 if (document.querySelector('h2').innerHTML === 'Player 2') {
