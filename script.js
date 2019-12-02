@@ -8,9 +8,14 @@ function playGame(){
       if (document.querySelector('h2').innerHTML === 'Player 2') {
         evt.target.style.backgroundColor = 'red';
         document.querySelector('h2').innerHTML = 'Player 1'
-} else if (document.querySelector('h2').innerHTML === 'Player 1') {
-
-}
+        } else if (document.querySelector('h2').innerHTML === 'Player 1') {
+          evt.target.style.backgroundColor = 'blue';
+          document.querySelector('h2').innerHTML = 'Player 2'
+        }
+      })
+    }
+  }
+playGame()
 
 /* Original if else statement
 if (document.querySelector('h2').innerHTML === 'Player 2') {
