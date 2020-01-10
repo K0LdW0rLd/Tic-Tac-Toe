@@ -2,6 +2,7 @@ console.log('I work');
 
 let aNodeList = document.querySelectorAll('.square')
 let a = Array.from(aNodeList)
+
 function getWinner(){
   if ((a[0].innerHTML === a[1].innerHTML && a[1].innerHTML === a[2].innerHTML)||(a[0].innerHTML === a[3].innerHTML && a[3].innerHTML === a[6].innerHTML)||(a[1].innerHTML === a[4].innerHTML && a[4].innerHTML === a[7].innerHTML)||(a[2].innerHTML === a[5].innerHTML && a[5].innerHTML === a[8].innerHTML)||(a[3].innerHTML === a[4].innerHTML && a[4].innerHTML === a[5].innerHTML)||(a[6].innerHTML === a[7].innerHTML && a[7].innerHTML === a[8].innerHTML)||(a[0].innerHTML === a[4].innerHTML && a[4].innerHTML === a[8].innerHTML)||(a[2].innerHTML === a[4].innerHTML && a[4].innerHTML === a[6].innerHTML)) {
     alert(document.querySelector('h2').innerHTML + ' wins!!')
@@ -11,15 +12,20 @@ function getWinner(){
 }
 
 function playGame(){
+  let q = 0;
   for (let i = 0; i < 9; i++) {
     a[i].addEventListener('click', function (evt){
       evt.preventDefault();
+      console.log('Round Number ' + q++)
       if (document.querySelector('h2').innerHTML === 'Player 2') {
         evt.target.style.backgroundColor = 'red';
         evt.target.style.pointerEvents = 'none';
         evt.target.innerHTML = 'X';
         evt.target.style.fontSize = '30px';
         getWinner()
+        if (q=== 3) {
+          alert('tie game')
+        }
         document.querySelector('h2').innerHTML = 'Player 1'
         document.querySelector('p').innerHTML = 'Blue'
         } else if (document.querySelector('h2').innerHTML === 'Player 1') {
@@ -28,6 +34,9 @@ function playGame(){
           evt.target.innerHTML = 'O';
           evt.target.style.fontSize = '30px';
           getWinner()
+          if (q=== 3) {
+            alert('tie game')
+          }
           document.querySelector('h2').innerHTML = 'Player 2'
           document.querySelector('p').innerHTML = 'Red'
         }
@@ -35,6 +44,7 @@ function playGame(){
     }
   }
 playGame();
+
 
 /* Original if else statement
 if (document.querySelector('h2').innerHTML === 'Player 2') {
