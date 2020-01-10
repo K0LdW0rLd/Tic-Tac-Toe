@@ -23,7 +23,7 @@ function playGame(){
         evt.target.innerHTML = 'X';
         evt.target.style.fontSize = '30px';
         getWinner()
-        if (q=== 3) {
+        if (q=== 9) {
           alert('tie game')
         }
         document.querySelector('h2').innerHTML = 'Player 1'
@@ -34,7 +34,7 @@ function playGame(){
           evt.target.innerHTML = 'O';
           evt.target.style.fontSize = '30px';
           getWinner()
-          if (q=== 3) {
+          if (q=== 9) {
             alert('tie game')
           }
           document.querySelector('h2').innerHTML = 'Player 2'
